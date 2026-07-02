@@ -1,0 +1,43 @@
+baseURL = "https://example.org/"
+title = "Paper Reader"
+theme = "hugo-paper-reader"
+locale = "zh-cn"
+defaultContentLanguage = "zh-cn"
+
+[pagination]
+  pagerSize = 5
+
+[params]
+  description = "A quiet Hugo theme for long-form reading."
+  info = "Essays, notes, and slow observations."
+  footercontent = "Made with Hugo and Paper Reader."
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Posts"
+    url = "/post/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 4
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 5

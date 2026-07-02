@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="post">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ if not .Date.IsZero }}<p class="meta">{{ .Date.Format "2006-01-02" }}</p>{{ end }}
+  </header>
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+
+  {{ if or .Params.categories .Params.tags }}
+  <footer class="post-taxonomy">
+    {{ with .Params.categories }}
+    <p>分类：{{ range $index, $category := . }}{{ if $index }}、{{ end }}<a href="{{ printf "categories/%s/" ($category | urlize) | relURL }}">{{ $category }}</a>{{ end }}</p>
+    {{ end }}
+    {{ with .Params.tags }}
+    <p>标签：{{ range $index, $tag := . }}{{ if $index }}、{{ end }}<a href="{{ printf "tags/%s/" ($tag | urlize) | relURL }}">{{ $tag }}</a>{{ end }}</p>
+    {{ end }}
+  </footer>
+  {{ end }}
+</article>
+{{ end }}

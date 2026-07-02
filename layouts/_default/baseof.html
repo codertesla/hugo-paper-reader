@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang | default "zh-cn" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{{ block "title" . }}{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}{{ end }}</title>
+  {{ with .Description | default .Site.Params.description }}
+  <meta name="description" content="{{ . }}">
+  {{ end }}
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+    {{ with .Site.Menus.main }}
+    <nav class="site-nav" aria-label="Main navigation">
+      {{ range . }}
+      <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    {{ end }}
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="site-footer">
+    {{ with .Site.Params.footercontent }}<p>{{ . }}</p>{{ end }}
+    <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}</p>
+  </footer>
+</body>
+</html>

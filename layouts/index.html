@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="intro">
+  {{ with .Site.Params.info }}<p>{{ . }}</p>{{ end }}
+</section>
+
+{{ $pages := where .Site.RegularPages "Section" "post" }}
+{{ $paginator := .Paginate $pages }}
+<section class="post-list" aria-label="Recent posts">
+  {{ range $paginator.Pages }}
+  <article class="post-summary">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p class="meta">{{ .Date.Format "2006-01-02" }}</p>
+    {{ with .Description }}
+    <p>{{ . }}</p>
+    {{ else }}
+    <p>{{ .Summary | plainify | truncate 120 }}</p>
+    {{ end }}
+  </article>
+  {{ end }}
+</section>
+
+{{ partial "pagination.html" . }}
+{{ end }}
