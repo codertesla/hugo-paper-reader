@@ -1,9 +1,9 @@
 name = "Paper Reader"
 license = "MIT"
 licenselink = "https://github.com/codertesla/hugo-paper-reader/blob/master/LICENSE"
-description = "A minimal Hugo theme focused on calm long-form reading."
+description = "A minimalist, reading-first Hugo theme for calm long-form writing. 一款专注安静长文阅读体验的 Hugo 极简主题。"
 homepage = "https://github.com/codertesla/hugo-paper-reader"
-tags = ["blog", "minimal", "reading", "typography", "responsive", "dark mode"]
+tags = ["blog", "minimal", "reading", "typography", "responsive", "dark mode", "hugo theme", "static site"]
 features = ["responsive", "dark mode", "pagination", "taxonomies"]
 min_version = "0.120.0"
 

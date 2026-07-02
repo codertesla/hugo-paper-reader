@@ -1,6 +1,8 @@
 # Paper Reader
 
-Paper Reader is a minimal Hugo theme for calm long-form reading.
+Paper Reader is a minimalist, reading-first Hugo theme for calm long-form writing.
+
+Paper Reader 是一款专注安静长文阅读体验的 Hugo 极简主题。
 
 It is intentionally small: plain Hugo templates, one CSS file, no JavaScript, no asset pipeline, no npm install step. The theme works well for personal blogs, notes, essays, and Chinese-language writing.
 
